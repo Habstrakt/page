@@ -1,0 +1,36 @@
+@import 'libs/bootstrap.min';
+@import 'libs/jquery.fancybox.min';
+@import 'libs/owl.carousel.min';
+@import 'libs/owl.theme.default.min';
+
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  background-image: linear-gradient(to right, #934bff 0%, #5f3afc 100%);
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+}
+
+.title {
+  font-size: 46px;
+  font-weight: 400;
+}
+
+.hidden {
+  display: none;
+}
+
+@import 'blocks/header';
+@import 'blocks/promo';
+@import 'blocks/about';
+@import 'blocks/project';
+@import 'blocks/contact';
+@import 'blocks/footer';
+@import 'blocks/modal';
