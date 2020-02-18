@@ -47,12 +47,25 @@ $(document).ready(function(){
 		.closest('div.container').find('div.project__imgs').removeClass('project__imgs_active').eq($(this).index()).addClass('project__imgs_active');
 	});
 
-	$("#menu").on("click","a", function (event) {
+	$('#menu').on("click","a", function (event) {
 		event.preventDefault();
 		const id  = $(this).attr('href'),
 				top = $(id).offset().top;
 		$('body,html').animate({scrollTop: top}, 1500);
 	});
 
-	
+	$('form').submit(function(e) {
+		e.preventDefault();
+		$.ajax({
+			type: "POST",
+			url: "mailer/smart.php",
+			data: $(this).serialize()
+		}).done(function() {
+			$(this).find("input").val("");
+
+
+			$('form').trigger('reset');
+		});
+		return false;
+	});
 });
