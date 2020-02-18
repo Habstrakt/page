@@ -55,14 +55,17 @@ $(document).ready(function(){
 	});
 
 	$('form').submit(function(e) {
+		let context = this;
 		e.preventDefault();
+		console.log('try post')
 		$.ajax({
 			type: "POST",
 			url: "mailer/smart.php",
-			data: $(this).serialize()
-		}).done(function() {
-			$(this).find("input").val("");
-
+			data: $(context).serialize()
+		}).done(function(handler) {
+			console.log(handler)
+			// $(context).find("input").val("");
+			
 
 			$('form').trigger('reset');
 		});
